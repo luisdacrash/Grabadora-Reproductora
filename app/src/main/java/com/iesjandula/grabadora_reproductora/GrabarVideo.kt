@@ -49,8 +49,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             val videoUrl: Uri? = datos?.data
             videoUrl?.let {
                 // Obtiene datos del Intent que inició esta actividad
-                val listUrl: ArrayList<String> =
-                    intent.getStringArrayListExtra("LISTA_URL") ?: ArrayList()
+                val listUrl: ArrayList<String> = intent.getStringArrayListExtra("LISTA_URL") ?: ArrayList()
 
                 if (!listUrl.contains(it.toString())) {
                     // Asegura que el video no esté ya en la lista
