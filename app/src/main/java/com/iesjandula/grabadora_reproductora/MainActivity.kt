@@ -1,6 +1,5 @@
 package com.iesjandula.grabadora_reproductora
 
-import PlayVideoActivity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -15,18 +14,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
+        menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.GrabarVideo -> {
-                val intentGrabarVideo = Intent(this, RecordVideoActivity::class.java)
+            R.id.mGrabarVideo -> {
+                val intentGrabarVideo = Intent(this, GrabarVideo::class.java)
                 startActivity(intentGrabarVideo)
             }
-            R.id.ReproducirVideo -> {
-                val intentReproducirVideo = Intent(this, PlayVideoActivity::class.java)
+            R.id.mReproducirVideo -> {
+                val intentReproducirVideo = Intent(this, ReproducirVideo::class.java)
                 startActivity(intentReproducirVideo)
             }
         }
