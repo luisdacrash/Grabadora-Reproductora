@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_item_record_video"
+        android:id="@+id/GrabarVideo"
         android:title="Grabar video" />
 
     <item
-        android:id="@+id/menu_item_play_video"
+        android:id="@+id/ReproducirVideo"
         android:title="Reproducir video" />
 
 </menu>

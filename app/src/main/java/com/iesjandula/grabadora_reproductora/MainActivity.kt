@@ -17,20 +17,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
-        return true
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_item_record_video -> {
-                val intent = Intent(this, RecordVideoActivity::class.java)
-                startActivity(intent)
-                return true
+            R.id.GrabarVideo -> {
+                val intentGrabarVideo = Intent(this, RecordVideoActivity::class.java)
+                startActivity(intentGrabarVideo)
             }
-            R.id.menu_item_play_video -> {
-                val intent = Intent(this, PlayVideoActivity::class.java)
-                startActivity(intent)
-                return true
+            R.id.ReproducirVideo -> {
+                val intentReproducirVideo = Intent(this, PlayVideoActivity::class.java)
+                startActivity(intentReproducirVideo)
             }
         }
         return super.onOptionsItemSelected(item)
