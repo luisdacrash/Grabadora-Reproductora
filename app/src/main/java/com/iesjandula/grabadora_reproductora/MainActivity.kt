@@ -27,11 +27,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.mGrabarVideo -> {
-                val intentGrabarVideo = Intent(this, GrabarVideo::class.java)
+                val intent = Intent(this, GrabarVideo::class.java)
 
                 intent.putExtra("LISTA_URL", listaURL)
 
-                startActivity(intentGrabarVideo)
+                startActivity(intent)
                 return true
             }
 
