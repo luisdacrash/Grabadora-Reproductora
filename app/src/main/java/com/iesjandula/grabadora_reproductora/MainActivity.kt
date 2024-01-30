@@ -9,24 +9,28 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    // Variables para almacenar la URL del video y la lista de URLs
     private var videoURL : String? = null
     private lateinit var listaURL : ArrayList<String>
+    // Método que se llama cuando se crea la actividad
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Obtiene la URL del video y la lista de URLs del Intent
         videoURL = intent.getStringExtra("VIDEO_URL")
         listaURL = intent.getStringArrayListExtra("LISTA_URL") ?: ArrayList()
     }
-
+    //metodo que muestra el menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
+    //metodo que da funcionalidad al menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.mGrabarVideo -> {
+                // Cuando se selecciona "Grabar Video", se crea un Intent para iniciar GrabarVideo
                 val intent = Intent(this, GrabarVideo::class.java)
 
                 intent.putExtra("LISTA_URL", listaURL)

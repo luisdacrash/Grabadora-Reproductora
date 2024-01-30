@@ -18,12 +18,12 @@ override fun onCreate(savedInstanceState: Bundle?) {
     // Inicia la captura de video
     dispatchTakeVideoIntent()
 }
-
+    //metodo para mostrar menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.volver, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
+    //metodo para las opciones del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.mVolver -> {
@@ -34,6 +34,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
         }
         return super.onOptionsItemSelected(item)
     }
+    //metodo para iniciar la captura del video
     private fun dispatchTakeVideoIntent() {
         Intent(MediaStore.ACTION_VIDEO_CAPTURE).also { takeVideoIntent ->
             takeVideoIntent.resolveActivity(packageManager)?.also {
@@ -41,6 +42,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             }
         }
     }
+    // Método que se llama cuando se completa una actividad iniciada por startActivityForResult
     override fun onActivityResult(requestCode: Int, resultCode: Int, datos: Intent?) {
         super.onActivityResult(requestCode, resultCode, datos)
 
